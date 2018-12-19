@@ -1,5 +1,5 @@
 <?php
-include_once "config/db_connection.php";
+include_once "../config/db_connection.php";
 $conn = dbConnect();
 
 
@@ -12,9 +12,7 @@ $conn = dbConnect();
     <title></title>
   </head>
   <body>
-    <!--<pre>
-      <?php var_dump($conn); ?>
-
-</pre>-->
+<a href="create.php">Create user</a>
+<a href="read.php?show=all">Read all users</a>
   </body>
 </html>

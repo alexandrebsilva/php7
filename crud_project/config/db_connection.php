@@ -1,11 +1,10 @@
 <?php
-
 function dbConnect(){
   //parameters for the db connection
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $db_name = "php7";
+  $db_name = "crud";
   //connection itself
   try {
       $conn = new PDO("mysql:host=$servername;dbname=$db_name", $username, $password);
