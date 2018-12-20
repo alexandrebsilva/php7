@@ -11,9 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return [['id'=>2],['id'=>5],['id'=>8]];
-});
-Route::get('api', function () {
-    return [['id'=>2],['id'=>5],['id'=>8]];
-});
+Route::get('/', 'PostController@index');
+
+Route::get('/posts/create', 'PostController@create');
+
+Route::post('/posts', 'PostController@store');
+
+Route::get('/posts/{title}', 'PostController@show');
+
+Route::get('/posts/{title}/edit', 'PostController@edit');
+
+Route::put('/posts/{title}', 'PostController@update');
+
+Route::delete('/posts/{title}', 'PostController@edit');
