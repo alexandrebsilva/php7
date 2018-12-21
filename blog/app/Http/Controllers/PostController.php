@@ -14,8 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $user_name = "Alexandre borges";
-        return view('pages/home', compact('user_name'));
+        $pageTitle ="Home";
+        return view('posts/index', compact('pageTitle'));
     }
 
     /**
@@ -25,7 +25,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return "create page";
+        $pageTitle ="Create post";
+        return view('posts/create', compact('pageTitle'));
     }
 
     /**
@@ -36,7 +37,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return "store page";
+
+        return [
+          $request->all(),
+          $request->title,
+          $request->content,
+
+      ];
+
     }
 
     /**
@@ -47,7 +55,7 @@ class PostController extends Controller
      */
     public function show(Post $post, $title)
     {
-        return "show <strong>{$title}</strong> page";
+        return view('posts/show');
     }
 
     /**
@@ -56,9 +64,9 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Post $post, $title)
     {
-        return "edit page";
+        return view('posts/edit');
     }
 
     /**
@@ -68,9 +76,9 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Post $post, $title)
     {
-        return "update single page";
+        return 'update page';
     }
 
     /**
@@ -79,8 +87,8 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Post $post, $title)
     {
-        return "delete date";
+        return 'destroy page';
     }
 }
