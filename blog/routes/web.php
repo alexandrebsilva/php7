@@ -11,16 +11,23 @@
 |
 */
 
+//home
 Route::get('/', 'PostController@index');
 
+//create
 Route::get('/posts/create', 'PostController@create');
 
+//store
 Route::post('/posts', 'PostController@store');
 
-Route::get('/posts/{title}', 'PostController@show');
+//show
+Route::get('/posts/{id}', 'PostController@show');
 
-Route::get('/posts/{title}/edit', 'PostController@edit');
+//edit
+Route::get('/posts/{id}/edit', 'PostController@edit');
 
-Route::put('/posts/{title}', 'PostController@update');
+//update
+Route::put('/posts/{id}', 'PostController@update');
 
-Route::delete('/posts/{title}', 'PostController@destroy');
+//destroy
+Route::get('/posts/{id}/delete', 'PostController@destroy');

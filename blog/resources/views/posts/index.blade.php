@@ -8,7 +8,15 @@
 @endsection
 
 @section('content')
+<div class="container bg-light">
 
-<h1>Fundamenta Home page</h1>
+
+<h1>POSTS</h1>
+
+@foreach($posts as $post)
+    <a href="/posts/{{$post->id}}"> <h2>{{ $post->title }}</h2></a>
+@endforeach
+
+</div>
 
 @endsection
